@@ -33,6 +33,7 @@ export default {
           }
         );
         const data = await req.json();
+        if (req.ok) window.location.reload(true);
         // console.log(data);
       } catch (err) {
         console.log(err);
@@ -57,7 +58,7 @@ export default {
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Id</th>
+        <!-- <th scope="col">Id</th> -->
         <th scope="col">Nama</th>
         <th scope="col">Nomor Telepon</th>
         <th scope="col">Alamat</th>
@@ -68,7 +69,7 @@ export default {
     <tbody v-if="contacts.length > 0" v-for="(contact, index) in contacts">
       <tr>
         <th scope="row">{{ index + 1 }}</th>
-        <td>{{ contact.id }}</td>
+        <!-- <td>{{ contact.id }}</td> -->
         <td>{{ contact.nama }}</td>
         <td>{{ contact.telp }}</td>
         <td>{{ contact.alamat }}</td>
